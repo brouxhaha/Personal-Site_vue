@@ -14,15 +14,18 @@
                 <router-view></router-view>
             </transition>
         </main>
+        <app-footer></app-footer>
     </div>
 </template>
 
 <script>
     import Header from './components/Header.vue';
+    import Footer from './components/Footer.vue';
 
     export default {
         components: {
-            appHeader: Header
+            appHeader: Header,
+            appFooter: Footer
         }
     }
 </script>
