@@ -12,7 +12,7 @@ export const store = new Vuex.Store({
                 launchDate: 'April 2018',
                 description: '<p>TravelAlaska.com is the official State of Alaska travel website. This current iteration of the design evolved from a redesign done at the end of 2015 that greatly expanded the size and use of images and did not try to cram all the content into a small area, so it was all visible all the time.</p><p>The focus of this latest design update was to invoke inspiration for travel to Alaska. To do so, even larger imagery was incorporated and more images were used throughout the site. The Get Inspired section of the site was renamed from Experience Alaska and now has a distinct landing page with way less text.</p><p>Visual design updates included a change in colors and fonts used on the site. This design has a more polished feel with the addition of dark backgrounds used throughout. The site headings previously used Amatic which is a handwritten, rougher type; we changed from using that and Fira Sans (which I still really like) to the more geometric font Azo Sans.</p>',
                 homeImg: '/src/assets/travel-alaska_initial_2000x1200.jpg',
-                projectImgs: ['_home_full_2000x1200', '_wildlife-full_2000x1200', '_communities-full_2000x1200'],
+                projectImgs: ['_home-full_2000x1200', '_wildlife-full_2000x1200', '_communities-full_2000x1200'],
                 website: 'https://www.travelalaska.com'
             },
             {
