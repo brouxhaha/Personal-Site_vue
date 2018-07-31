@@ -2,8 +2,8 @@
     <div class="container">
         <div class="panel--main relative">
             <!--<img src="./assets/triangle.svg" class="header__svg">--> 
-            <div class="header__svg"> 
-                <svg width="100%" viewBox="0 0 1401 568" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="header__background"> 
+                <svg width="100%" viewBox="0 0 1401 568" fill="none" xmlns="http://www.w3.org/2000/svg" class="header__svg">
                 <path d="M0 0L700 568C933.5 379 1389.6 0 1400 0H0Z" transform="translate(0.5)" fill="url(#paint0_linear)" fill-opacity="0.6"/>
                 <defs>
                     <linearGradient id="paint0_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1002.5 1080.95) scale(625 1538.9) rotate(180)">
@@ -76,12 +76,16 @@
         margin-top: 0;
     }
 
-    .header__svg {
+    .header__background {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         max-height: 100%;
+    }
+
+    .header__svg {
+        max-height: 500px;
     }
 
     .fade-enter {
