@@ -46,6 +46,114 @@
     <div id="app">
     </div>
     <script src="/dist/build.js"></script>
+    <script>
+        (function() {
+            const lineEls = document.querySelectorAll('.svg__line');
+            const duration = {
+                min: 0.5,
+                max: 3.5
+            };
+            let lines = [];
+
+            lineEls.forEach(line => {
+                lines.push({
+                    element: line,
+                    x1: Number(line.getAttribute('x1')),
+                    x2: Number(line.getAttribute('x2')),
+                    currentX2: Number(line.getAttribute('x2')),
+                    currentY2: Number(line.getAttribute('y2')),
+                    speed: getRandomSpeed(duration.min, duration.max),
+                    decreasing: true
+                });
+            });
+
+            const animateLine = now => {
+                for (let i = 0; i < lines.length; i++) {
+                    const line = lines[i];
+
+                    if (line.decreasing) {
+                        if (line.currentX2 > line.x1 + 50) {
+                            line.currentX2 -= line.speed;
+                            line.currentY2 += line.speed;
+                            line.element.setAttribute('x2', line.currentX2);
+                            line.element.setAttribute('y2', line.currentY2);
+                        } else {
+                            line.decreasing = false;
+                        }
+                    } else {
+                        if (line.currentX2 <= line.x2) {
+                            line.currentX2 += line.speed;
+                            line.currentY2 -= line.speed;
+                            line.element.setAttribute('x2', line.currentX2);
+                            line.element.setAttribute('y2', line.currentY2);
+                        } else {
+                            line.decreasing = true;
+                        }
+                    }
+                }
+
+                window.requestAnimationFrame(animateLine);
+            };
+
+            function getRandomSpeed(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            window.requestAnimationFrame(animateLine);
+
+            /* THE SHITTY, SETINTERVAL WAY OF ANIMATING, FOR REFERENCE */
+            /*const svg = document.querySelector('svg');
+            const lines = document.querySelectorAll('.svg__line');
+
+            lines.forEach(line => {
+                const x1 = Number(line.getAttribute('x1'));
+                const x2 = Number(line.getAttribute('x2'));
+                const y1 = Number(line.getAttribute('y1'));
+                const y2 = Number(line.getAttribute('y2'));
+                var interval;
+                let decreasing = true;
+                const yMin = y1 - 50;
+                const yMax = y2 + 0;
+                const xMin = x1 + 50;
+                const xMax = x2 + 0;
+                let randomTime = getRandomTime(x1, x2);
+
+                // need to subtract from x
+                // need to add to y
+
+                interval = setInterval(() => {
+                    let currentX2 = Number(line.getAttribute('x2'));
+                    let currentY2 = Number(line.getAttribute('y2'));
+
+                    if (decreasing) {
+                        if (currentX2 > xMin) {
+                        line.setAttribute('x2', currentX2 -= 1);
+                        line.setAttribute('y2', currentY2 += 1);
+
+                        console.log(line, currentX2, currentY2 = currentY2 + 2);
+                        } else {
+                        decreasing = false;
+                        }
+                    }
+
+                    if (!decreasing) {
+                        if (currentX2 <= xMax) {
+                        line.setAttribute('x2', currentX2 += 1);
+                        line.setAttribute('y2', currentY2 -= 1);
+                        } else {
+                        decreasing = true;
+                        }
+                    }
+                }, randomTime)
+            });
+
+            function getRandomTime(x1, x2) {
+                const min = 20;
+                const max = 70;
+                return Math.floor(Math.random() * (max - min)) + min;
+            }*/
+        })();
+    </script>
 </body>
 
 </html>

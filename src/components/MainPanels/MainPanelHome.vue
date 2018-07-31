@@ -66,6 +66,7 @@
 
     h1 {
         font-size: 2rem;
+        line-height: 1.2;
         text-align: center;
         margin-bottom: 3rem;
         margin-top: 0;
