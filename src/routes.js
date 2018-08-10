@@ -29,6 +29,7 @@ export const routes = [{
             default: Project,
             'main-panel': MainPanelProject
         }
-    },
-    { path: '*', redirect: '/' }
+    }/*,
+    { path: '/src/assets/meta-image.jpg'},
+    { path: '*', redirect: '/' }*/
 ];
