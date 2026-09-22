@@ -3,13 +3,12 @@
         <div class="home__greeting">
             <h1 class="centered">Hi, I'm Andy.</h1>
             <ul class="list--description centered">
-                <li class="list--description__item">Developer</li>
                 <li class="list--description__item">Designer</li>
+                <li class="list--description__item">Developer</li>
                 <li class="list--description__item">Problem Solver</li>
                 <li class="list--description__item">Coffee Drinker</li>
                 <li class="list--description__item">Nature Lover</li>
-                <li class="list--description__item">Cyclist</li>
-                <li class="list--description__item">Husband</li>
+                <li class="list--description__item">Birder</li>
                 <li class="list--description__item">Father</li>
                 <li class="list--description__item">Pet Owner</li>
             </ul>
